@@ -37,6 +37,7 @@ router.get('/', function(req, res, next) {
         if(results)
         {
             console.log(results[0])
+            console.log('in')
             res.render('gameCover', {title : params.id, game : JSON.stringify(results[0])});
         }
     });
