@@ -27,19 +27,19 @@ router.get('/', function(req, res, next) {
     client.query("use " + TEST_DATABASE);
 
     var modSql = 'SELECT * FROM bggdatacn WHERE gameid = ?';
-    var modSqlParams = [params.gameid];
+    var modSqlParams = [params.id];
 
     client.query(modSql, modSqlParams,
     function selectCb(err, results, fields) {
         if (err) {throw err;}
 
-        console.log(results)
-        console.log('outer')
+        //console.log(results)
+        //console.log('outer')
         if(results)
         {
-            console.log(results[0])
-            console.log('in')
-            res.render('gameCover', {title : params.id, game : JSON.stringify(results[0])});
+            //console.log(results[0])
+            //console.log('in')
+            res.render('gameCover', {title : params.id, game : results[0]});
         }
     });
 });
