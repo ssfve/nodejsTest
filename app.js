@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var games = require('./routes/games');
 var database = require('./routes/database');
+var gameCover = require('./routes/gameCover');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/games', games);
 app.use('/database', database);
+app.use('/gameCover', gameCover);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
