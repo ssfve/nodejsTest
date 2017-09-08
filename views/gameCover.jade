@@ -1,5 +1,12 @@
 extend game
 
 block content
-    each value,key in game
-        p #{key}: #{value}
+    p 游戏名称：#{nameCN}
+    p 评分：#{average}
+    p 发行时间：#{yearpublished}
+    p 重度：#{averageweigh}
+    p 游戏人数：#{minplayers} ~ #{maxplayers} [#{suggested_numplayers}]
+    p 游戏时间：#{minplaytime} ~ #{maxplaytime} 分钟
+    p 分类：#{categorysCN}
+    p 机制：#{mechanicsCN}
+	a(href='http://www.boardgamerules.cn/index/gameRule.html?id=#{gameid}') 游戏规则
