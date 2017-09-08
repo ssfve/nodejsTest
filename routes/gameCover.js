@@ -32,8 +32,9 @@ router.get('/', function(req, res, next) {
     client.query(modSql, modSqlParams,
     function selectCb(err, results, fields) {
         if (err) {throw err;}
-        //console.log(results)
-        //console.log(results[0].age)
+
+        console.log(results)
+        console.log('outer')
         if(results)
         {
             console.log(results[0])
