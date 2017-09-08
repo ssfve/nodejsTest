@@ -36,7 +36,7 @@ router.get('/', function(req, res, next) {
         //console.log(results[0].age)
         if(results)
         {
-            res.render('gameCover', {title : id, game : results[0]});
+            res.render('gameCover', {title : params.id, game : results[0]});
         }
     });
 });
