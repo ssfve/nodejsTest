@@ -39,7 +39,7 @@ router.get('/', function(req, res, next) {
         {
             console.log(results[0])
             //console.log('in')
-            res.render('gameCover', {title : params.id, game : results[0]});
+            res.render('gameCover', {title : params.id, game : JSON.stringify(results[0])});
         }
     });
 });
