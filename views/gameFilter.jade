@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    form(action='/gameFilter')
+        名称：
+        input(type='text', name='name', value = "#{param.name}")
+        br 
+        最小人数：
+        input(type='number', name='minPlayers', min="1" max="10" value = "#{param.minPlayers}")
+        br 
+        最大人数：
+        input(type='number', name='maxPlayers', min="1" max="10" value = "#{param.maxPlayers}")
+        br
+        机制：
+        each mech in mechs
+            - var index = -1
+            - if (param.mech) 
+                - index = param.mech.indexOf(mech)
+            br            
+            - if (index >= 0)
+                input(type='checkbox', name='mech', value = "#{mech}" checked='1')                
+            - else
+                input(type='checkbox', name='mech', value = "#{mech}")
+            span #{mech}
+        br
+        input(type='submit', value='搜索')
+    - var index = 0
+    each game in gamedata
+        - index += 1
+        <br> No. #{index}
+        //div(style='background-image: url("../img/#{game.gameid}/caption.jpg"); height: 50vw;')
+        <br>游戏名称：#{game.nameCN}
+        <br>评分：#{game.average}
+        <br>重度：#{game.averageweight}
+        <br>游戏人数：#{game.minplayers} ~ #{game.maxplayers} [#{game.suggested_numplayers}]
+        <br>游戏时间：#{game.minplaytime} ~ #{game.maxplaytime} 分钟
+        <br>分类：#{game.categorysCN}
+        <br>机制：#{game.mechanicsCN}
+        <br>

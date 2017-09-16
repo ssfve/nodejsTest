@@ -1,0 +1,158 @@
+html
+  head
+    - var root = 'http://180.76.244.130'
+    meta(charset='utf-8')
+    title
+    meta(name='description', content='')
+    meta(name='keywords', content='桌游规则，桌游说明书')
+    meta(name='author', content='boardgamerules')
+    meta(name='version', content='boardgamerules 2.0')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    meta(name='viewport', content='width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no')
+    link(rel='stylesheet', type='text/css', href='#{root}/css/normalize.css')
+    link(rel='stylesheet', type='text/css', href='#{root}/css/mui.min.css')
+    link(rel='stylesheet', type='text/css', href='#{root}/css/app.css')
+    link(rel='stylesheet', type='text/css', href='#{root}/css/bgr.style.css')
+    link(rel='stylesheet', type='text/css', href='#{root}/css/bgr.imageviewer.css')
+    script(type='text/javascript', src='#{root}/js/mui.min.js')
+    script(type='text/javascript', src='#{root}/js/jquery-3.2.1.min.js')
+    script(type='text/javascript', src='#{root}/index/variables/cover.variables.js')
+    script(type='text/javascript', src='#{root}/js/page/sidepane.variables.js')
+    script(type='text/javascript', src='#{root}/js/page/hotlist.variables.js')
+    //script(type='text/javascript', src='#{root}/js/functions/functions.js')
+    //script(type='text/javascript', src='#{root}/js/functions/database_util.js')
+  body.mui-ios.mui-ios-9.mui-ios-9-1.mui-fullscreen
+    #offCanvasWrapper.mui-off-canvas-wrap.mui-draggable.mui-slide-in(data-offcanvas='2')
+      // 侧滑菜单部分
+      aside#offCanvasSide.mui-off-canvas-left.background-color-orange(style='background-color: rgb(55, 71, 79);')
+        #offCanvasSideScroll.mui-scroll-wrapper(data-scroll='1')
+          #sideHeader.title(style='margin-bottom: 5px; margin-top: 5px; transform: translate3d(0px, 0px, 0px) translateZ(0px);') 最新说明书
+          ul#sideContent.mui-table-view.mui-table-view-chevron.mui-table-view-inverted.background-color-orange(style='background-color: rgb(55, 71, 79);')
+            li.mui-table-view-cell
+              a#rulebook-list.mui-navigate-right(style='color:#FFFFFF;') 说明书列表 Rulebook List
+            li.mui-table-view-cell
+              a#102794.mui-navigate-right(style='color:#FFFFFF;') 洞穴农夫 Caverna:The Cave Farmers
+            li.mui-table-view-cell
+              a#150376.mui-navigate-right(style='color:#FFFFFF;') 死亡寒冬:生死抉择 Dead of Winter:A Crossroads Game
+            li.mui-table-view-cell
+              a#108745.mui-navigate-right(style='color:#FFFFFF;') 四季物语 Seasons
+            li.mui-table-view-cell
+              a#84838.mui-navigate-right(style='color:#FFFFFF;') 格斗之王(第二版) Yomi(2nd Edition)
+            li.mui-table-view-cell
+              a#990001.mui-navigate-right(style='color:#FFFFFF;') 奇奥英雄传 Chio Hero
+            li.mui-table-view-cell
+              a#167791.mui-navigate-right(style='color:#FFFFFF;') 火星开发计划 Terraforming Mars
+            li.mui-table-view-cell
+              a#209685.mui-navigate-right(style='color:#FFFFFF;') 香料之路 Century:Spice Road
+            li.mui-table-view-cell
+              a#13.mui-navigate-right(style='color:#FFFFFF;') 卡坦岛 Catan
+            li.mui-table-view-cell
+              a#171131.mui-navigate-right(style='color:#FFFFFF;') 深海谍影 Captain Sonar
+            li.mui-table-view-cell
+              a#128882.mui-navigate-right(style='color:#FFFFFF;') 阿瓦隆 The Resistance:Avalon
+            li.mui-table-view-cell
+              a#205059.mui-navigate-right(style='color:#FFFFFF;') 疯狂诡宅(第二版) Mansions of Madness:Second Edition
+          .mui-grid_view(style='background-color:#FFFFFF;')
+            .mui-media
+              .mui-table-view-cell.mui-media-body
+                span#subText.h6-text-grey 关注我们 : 
+                span#subName.h6-text-orange(style='color: rgb(55, 71, 79);') 桌游怎么玩
+          img(style='width:100%;', src='../img/interface/logo.jpg', data-preview-src='', data-preview-group='1')
+          //
+            作者：ssfvessfve@163.com
+            时间：2017-07-10
+            描述：
+            <img style="width:100%;" src="#{root}/img/interface/logo.jpg" data-preview-src="" data-preview-group="1"/>
+          .mui-scrollbar.mui-scrollbar-vertical
+            .mui-scrollbar-indicator(style='transition-duration: 0ms; display: none; height: 320px; transform: translate3d(0px, 0px, 0px) translateZ(0px);')
+      .mui-inner-wrap
+        header.mui-bar.mui-bar-nav.set-transparent
+          a.mui-icon.mui-action-menu.mui-icon-bars.mui-pull-left(href='#offCanvasSide')
+          a.mui-action-back.mui-btn.mui-btn-link.mui-pull-right
+          h1.mui-title
+        .mui-card.cover-card
+          #caption-pic.mui-card-header.mui-card-media(style='background-image: url("#{root}/img/#{gameid}/caption.jpg"); height: 50vw;')
+        .mui-content(style='padding-top: 0px;')
+          .mui-content-padded.no-margin-bottom
+            .mui-row(id='')
+              .mui-col-sm-2.mui-col-xs-2
+                #icon1.mui-grid-view
+                  .stack-imgs.no-margin-top
+                    h4#valueRates.cover-inner-text.h6-text-white.text-image-font(align='center', style='line-height: 53px;') #{rates}
+                    img#svg1.cover-img(src='#{root}/img/interface/37474F.svg')
+                  h6.h7(align='center')
+                    span#numRates.h6-text-orange(style='color: rgb(55, 71, 79);') 4.2k
+              .mui-col-sm-2.mui-col-xs-2
+                .mui-grid-view
+                  img#yearsvg.cover-inner-img(src='#{root}/img/interface/year.svg', style='left: 14.2891px; top: 7.89842px; width: 28.5782px; height: 31.7813px;')
+                  img#svg2.cover-img(src='#{root}/img/interface/37474F.svg')
+                  h6.h7(align='center')
+                    span#yearPub.h6-text-orange(style='color: rgb(55, 71, 79);') #{yearpublished}
+              .mui-col-sm-2.mui-col-xs-2
+                .mui-grid-view
+                  img#weightsvg.cover-inner-img(src='#{root}/img/interface/weight.svg', style='left: 14.2891px; top: 7.89842px; width: 28.5782px; height: 31.7813px;')
+                  img#svg3.cover-img(src='#{root}/img/interface/37474F.svg')
+                  h6.h7(align='center')
+                    span#weight.h6-text-orange(style='color: rgb(55, 71, 79);') #{weight}
+                    span#weightLimit.h6-text-grey /5
+              .mui-col-sm-2.mui-col-xs-2
+                .mui-grid-view
+                  img#agesvg.cover-inner-img(src='#{root}/img/interface/age.svg', style='left: 14.2891px; top: 7.89842px; width: 28.5782px; height: 31.7813px;')
+                  img#svg4.cover-img(src='#{root}/img/interface/37474F.svg')
+                  h6.h7(align='center')
+                    span#age.h6-text-orange(style='color: rgb(55, 71, 79);') #{age}
+                    span#ageMeaPlus.h6-text-orange(style='color: rgb(55, 71, 79);') +
+              .mui-col-sm-2.mui-col-xs-2
+                .mui-grid-view
+                  img#playerssvg.cover-inner-img(src='#{root}/img/interface/players.svg', style='left: 14.2891px; top: 7.89842px; width: 28.5782px; height: 31.7813px;')
+                  img#svg5.cover-img(src='#{root}/img/interface/37474F.svg')
+                  h6.h7(align='center')
+                    span#players.h6-text-orange(style='color: rgb(55, 71, 79);') #{minplayers}~#{maxplayers}
+                    span#playersBest.h6-text-grey [#{suggested_numplayers}]
+                  #info(align='center')
+              .mui-col-sm-2.mui-col-xs-2
+                .mui-grid-view
+                  img#clocksvg.cover-inner-img(src='#{root}/img/interface/clock.svg', style='left: 14.2891px; top: 7.89842px; width: 28.5782px; height: 31.7813px;')
+                  img#svg6.cover-img(src='#{root}/img/interface/37474F.svg')
+                  h6.h7(align='center')
+                    span#playtime.h6-text-orange(style='color: rgb(55, 71, 79);') #{minplaytime}’~#{maxplaytime}’
+                  #info(align='center')
+        .mui-content(style='padding-top: 0px;')
+          .mui-content-padded
+            .mui-row
+              .mui-col-sm-3.mui-col-xs-3
+                h6#gameName.h6-text-grey 游戏名称:
+              .mui-col-sm-9.mui-col-xs-9
+                h6#nameCN.h6-text-orange.my-overflow-style(style='color: rgb(55, 71, 79);') #{nameCN}
+              .mui-col-sm-3.mui-col-xs-3
+                h6#designerTitle.h6-text-grey 设计美术:
+              .mui-col-sm-9.mui-col-xs-9
+                h6#designerName.h6-text-grey.my-overflow-style #{designersCN} | #{artistsCN}
+              .mui-col-sm-3.mui-col-xs-3
+                h6#langTitleLow.h6-text-grey 语言依赖:
+              .mui-col-sm-9.mui-col-xs-9
+                h6
+                  span#langLvl4.h6-text-grey.color-orange(style='color: rgb(55, 71, 79);') #{language_dependence}
+              .mui-col-sm-3.mui-col-xs-3
+                h6#categoryTitle.h6-text-grey 机制分类:
+              .mui-col-sm-9.mui-col-xs-9
+                h6#categorys.h6-text-grey.my-overflow-style #{mechanicsCN} | #{categorysCN}
+        .mui-content(style='padding-top: 0px;')
+          .mui-content-padded
+            button#button6.mui-btn.mui-btn-block.bs-wo(type='button', onclick='btn6_click()', style='background-color: rgb(55, 71, 79);') 关注我们
+            button#button5.mui-btn.mui-btn-block.bs-wo(type='button', onclick='btn5_click()', style='background-color: rgb(55, 71, 79);') 中文规则
+            button#button1.mui-btn.mui-btn-block.bs-wo(type='button', onclick='btn1_click()', style='background-color: rgb(55, 71, 79);') 配件介绍
+          .mui-off-canvas-backdrop
+      script(src='#{root}/js/mui.zoom.js')
+      script(src='#{root}/js/mui.previewimage.js')
+      script(type='text/javascript', src='#{root}/index/cover.interface.js')
+      script(type='text/javascript', src='#{root}/index/events/cover.event.js')
+      script(src='.#{root}/js/functions/document.ready.js')
+    #__MUI_PREVIEWIMAGE.mui-slider.mui-preview-image.mui-fullscreen
+      .mui-preview-header
+        span.mui-preview-indicator
+      .mui-slider-group
+      .mui-preview-footer.mui-hidden
+      .mui-preview-loading
+        span.mui-spinner.mui-spinner-white
