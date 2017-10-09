@@ -1,7 +1,10 @@
 doctype html
 html
   head
+    - var root = 'http://180.76.244.130'
     title= nameCN
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/info.css')
+    script(type='text/javascript', src='#{root}/js/jquery-3.2.1.min.js')
   body
     block content

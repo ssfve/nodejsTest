@@ -1,0 +1,53 @@
+extends layout
+
+mixin showObject(obj)
+    case obj.tag
+        when "title"
+            .title #{obj.context}
+        when "info"
+            .info #{obj.context}
+        when "context"
+            .context #{obj.context}
+
+mixin showList(item)
+    - if(item.title)
+        +showObject(item.title)
+    - if(item.list)
+        .context
+            each listItem in item.list
+                -if(listItem.tag)
+                    +showObject(listItem)
+                -else
+                    +showList(listItem)
+
+block content
+    form(action='/gameInfo')
+        each list in gameInfo.expansList
+            span #{list.name}:
+            - var type = "checkbox"
+            - if (list.attribUnique)
+                - type = "radio"
+            each item in list.items
+                - var index = -1
+                - if (param.expans) 
+                    - index = param.expans.indexOf(list.name + "-" +item)
+                - if (index >= 0)
+                    input(type='#{type}', name='expans', value = '#{list.name + "-" +item}' checked = '1')
+                - else
+                    input(type='#{type}', name='expans', value = '#{list.name + "-" +item}')
+                span #{item}
+            br
+        人数：
+        input(type='number', name='players', min="#{gameInfo.minPlayers}" max="#{gameInfo.maxPlayers}" value = "#{param.players}")
+        br 
+        input(type='submit', value='生成')
+        br
+        +showList(gameList)
+        br
+    script.
+        $(document).ready(function(){
+            $(".title").click(function(){
+                $(this).next(".context").slideToggle(200);
+            })
+        });
+    

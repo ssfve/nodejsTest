@@ -13,6 +13,7 @@ var games = require('./routes/games');
 var database = require('./routes/database');
 var gameCover = require('./routes/gameCover');
 var gameFilter = require('./routes/gameFilter');
+var gameInfo = require('./routes/gameInfo');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use('/games', games);
 app.use('/database', database);
 app.use('/gameCover', gameCover);
 app.use('/gameFilter', gameFilter);
+app.use('/gameInfo', gameInfo);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
