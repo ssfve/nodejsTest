@@ -1,0 +1,57 @@
+extends layout
+
+block content
+    .title 回到开头
+    .display
+    script.
+        var gameData = !{gameGuide};
+        function showItem(item) {
+            var data = gameData[item];
+            if(data) {
+                var d = $(".display");
+                d.empty();
+                d.append(data.showString + "<br/>");
+                if(data.alert) {
+                    for(key in data.alert) {
+                        d.append("<button value = '" + data.alert[key] + "' onclick = 'alert(value)'>" + key + "</button></br>");
+                    }
+                }                
+                if(data.next) {
+                    for(key in data.next) {
+                        d.append("<button value = '" + data.next[key] + "' onclick = 'exchange(value)'>" + key + "</button></br>");
+                    }
+                }
+                if(data.link) {
+                    d.append("<a href = '" + data.link + "'>去看看</a></br>");
+                }
+                if(data.home) {
+                    d.append("<button onclick = 'home()'>游戏结束，回到开头</button></br>");
+                }
+            }
+            else
+            {
+                alert("缺少" + item + "条目");
+            }
+        }
+
+        function exchange (item) {
+            var d = $(".display");
+            var t = 200;
+            d.fadeOut(t, function(){
+                showItem(item);
+                d.fadeIn(t);
+            });            
+        }
+
+        function home() {
+            showItem(gameData.entry);
+        }
+
+        $(document).ready(function(){
+
+            $(".title").click(function(){
+                home();
+            })
+            home();
+        });
+    

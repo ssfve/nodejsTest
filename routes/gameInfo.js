@@ -19,7 +19,7 @@ var createGameList = function(params, info) {
             retVal.list = []
             for (item in info.context) {
                 retVal.list.push(createGameList(params, info.context[item]));
-            }            
+            }
         }
         return retVal
     }

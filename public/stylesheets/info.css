@@ -19,6 +19,12 @@ div.hint {
 	font-style: italic;
 }
 
+div.display {
+	padding: 5px;
+	text-align: center;
+	background: yellow;
+}
+
 div.show {
 	font-size: 30px;
 }

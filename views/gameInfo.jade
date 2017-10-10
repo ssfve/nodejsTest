@@ -41,9 +41,8 @@ block content
         input(type='number', name='players', min="#{gameInfo.minPlayers}" max="#{gameInfo.maxPlayers}" value = "#{param.players}")
         br 
         input(type='submit', value='生成')
-        br
-        +showList(gameList)
-        br
+    +showList(gameList)
+    br
     script.
         $(document).ready(function(){
             $(".title").click(function(){
